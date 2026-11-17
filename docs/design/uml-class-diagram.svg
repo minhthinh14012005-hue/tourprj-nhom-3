@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1400" viewBox="0 0 1600 1400" role="img" aria-labelledby="title desc">
   <title id="title">UML Class Diagram for TourPrj</title>
   <desc id="desc">Six Java classes for a travel tour management system and their relationships.</desc>
   <defs>
@@ -22,13 +22,13 @@
     </style>
   </defs>
 
-  <rect class="canvas" x="0" y="0" width="1600" height="1120"/>
+  <rect class="canvas" x="0" y="0" width="1600" height="1400"/>
   <text x="800" y="38" text-anchor="middle" class="title" style="font-size:28px">TourPrj - UML Class Diagram</text>
   <text x="800" y="64" text-anchor="middle" class="note">Travel Tour Management System | Java Console | Topic 10</text>
 
   <!-- Destination -->
   <g transform="translate(45 95)">
-    <rect class="classbox" width="470" height="300" rx="4"/>
+    <rect class="classbox" width="470" height="430" rx="4"/>
     <rect class="header" width="470" height="62" rx="4"/>
     <text x="235" y="29" text-anchor="middle" class="stereo">&lt;&lt;entity&gt;&gt;</text>
     <text x="235" y="51" text-anchor="middle" class="title">Destination</text>
@@ -38,15 +38,22 @@
     <text class="body" x="16" y="134">- region: String</text>
     <text class="body" x="16" y="157">- baseCost: double</text>
     <line class="section" x1="0" y1="174" x2="470" y2="174"/>
-    <text class="body" x="16" y="201">+ Destination()</text>
-    <text class="body" x="16" y="224">+ Destination(id, name, region, cost)</text>
-    <text class="body" x="16" y="247">+ getters / setters</text>
-    <text class="body" x="16" y="270">+ toString(): String</text>
+    <text class="body" x="16" y="198">+ Destination()</text>
+    <text class="body" x="16" y="219">+ Destination(id, name, region, cost)</text>
+    <text class="body" x="16" y="240">+ getDestinationId(): String</text>
+    <text class="body" x="16" y="261">+ setDestinationId(id): void</text>
+    <text class="body" x="16" y="282">+ getDestinationName(): String</text>
+    <text class="body" x="16" y="303">+ setDestinationName(name): void</text>
+    <text class="body" x="16" y="324">+ getRegion(): String</text>
+    <text class="body" x="16" y="345">+ setRegion(region): void</text>
+    <text class="body" x="16" y="366">+ getBaseCost(): double</text>
+    <text class="body" x="16" y="387">+ setBaseCost(cost): void</text>
+    <text class="body" x="16" y="408">+ toString(): String</text>
   </g>
 
   <!-- Tour -->
   <g transform="translate(1085 95)">
-    <rect class="classbox" width="470" height="345" rx="4"/>
+    <rect class="classbox" width="470" height="540" rx="4"/>
     <rect class="header" width="470" height="62" rx="4"/>
     <text x="235" y="29" text-anchor="middle" class="stereo">&lt;&lt;entity&gt;&gt; implements Comparable&lt;Tour&gt;</text>
     <text x="235" y="51" text-anchor="middle" class="title">Tour</text>
@@ -57,15 +64,25 @@
     <text class="body" x="16" y="157">- departureDate: String</text>
     <text class="body" x="16" y="180">- price: double</text>
     <line class="section" x1="0" y1="197" x2="470" y2="197"/>
-    <text class="body" x="16" y="224">+ Tour()</text>
-    <text class="body" x="16" y="247">+ Tour(id, destination, name, date, price)</text>
-    <text class="body" x="16" y="270">+ getters / setters</text>
-    <text class="body" x="16" y="293">+ compareTo(other): int</text>
-    <text class="body" x="16" y="316">+ toString(), screenString(): String</text>
+    <text class="body" x="16" y="220">+ Tour()</text>
+    <text class="body" x="16" y="241">+ Tour(id, destination, name, date, price)</text>
+    <text class="body" x="16" y="262">+ getTourId(): String</text>
+    <text class="body" x="16" y="283">+ setTourId(id): void</text>
+    <text class="body" x="16" y="304">+ getDestination(): Destination</text>
+    <text class="body" x="16" y="325">+ setDestination(destination): void</text>
+    <text class="body" x="16" y="346">+ getTourName(): String</text>
+    <text class="body" x="16" y="367">+ setTourName(name): void</text>
+    <text class="body" x="16" y="388">+ getDepartureDate(): String</text>
+    <text class="body" x="16" y="409">+ setDepartureDate(date): void</text>
+    <text class="body" x="16" y="430">+ getPrice(): double</text>
+    <text class="body" x="16" y="451">+ setPrice(price): void</text>
+    <text class="body" x="16" y="472">+ compareTo(other): int</text>
+    <text class="body" x="16" y="493">+ toString(): String</text>
+    <text class="body" x="16" y="514">+ screenString(): String</text>
   </g>
 
   <!-- DestinationList -->
-  <g transform="translate(45 505)">
+  <g transform="translate(45 675)">
     <rect class="classbox" width="535" height="375" rx="4"/>
     <rect class="header" width="535" height="62" rx="4"/>
     <text x="267" y="28" text-anchor="middle" class="stereo">&lt;&lt;collection&gt;&gt; extends ArrayList&lt;Destination&gt;</text>
@@ -84,7 +101,7 @@
   </g>
 
   <!-- Menu -->
-  <g transform="translate(625 545)">
+  <g transform="translate(625 715)">
     <rect class="classbox" width="350" height="190" rx="4"/>
     <rect class="header" width="350" height="62" rx="4"/>
     <text x="175" y="28" text-anchor="middle" class="stereo">&lt;&lt;utility&gt;&gt;</text>
@@ -97,7 +114,7 @@
   </g>
 
   <!-- TourList -->
-  <g transform="translate(1015 535)">
+  <g transform="translate(1015 675)">
     <rect class="classbox" width="540" height="405" rx="4"/>
     <rect class="header" width="540" height="62" rx="4"/>
     <text x="270" y="28" text-anchor="middle" class="stereo">&lt;&lt;collection&gt;&gt; extends ArrayList&lt;Tour&gt;</text>
@@ -117,7 +134,7 @@
   </g>
 
   <!-- TourManager -->
-  <g transform="translate(625 815)">
+  <g transform="translate(625 1070)">
     <rect class="classbox" width="350" height="215" rx="4"/>
     <rect class="header" width="350" height="62" rx="4"/>
     <text x="175" y="28" text-anchor="middle" class="stereo">&lt;&lt;application&gt;&gt;</text>
@@ -134,15 +151,15 @@
   <text class="relation-label" x="790" y="178" text-anchor="middle">destination (1)</text>
   <text class="relation-label" x="790" y="207" text-anchor="middle">Tour belongs to one Destination</text>
 
-  <path class="relation" d="M800 815 L800 735" marker-end="url(#arrow)"/>
-  <text class="relation-label" x="815" y="777">uses Menu</text>
+  <path class="relation" d="M800 1070 L800 905" marker-end="url(#arrow)"/>
+  <text class="relation-label" x="815" y="985">uses Menu</text>
 
-  <path class="relation" d="M975 860 L1015 860" marker-end="url(#arrow)"/>
-  <text class="relation-label" x="990" y="845" text-anchor="middle">uses</text>
+  <path class="relation" d="M975 1080 L1015 1080" marker-end="url(#arrow)"/>
+  <text class="relation-label" x="995" y="1062" text-anchor="middle">uses</text>
 
-  <path class="relation" d="M625 885 L580 885 L580 700" marker-end="url(#arrow)"/>
-  <text class="relation-label" x="590" y="795" text-anchor="end">uses</text>
+  <path class="relation" d="M625 1135 L580 1135 L580 850" marker-end="url(#arrow)"/>
+  <text class="relation-label" x="590" y="1000" text-anchor="end">uses</text>
 
-  <text class="note" x="45" y="1070">Visibility: - private attribute | + public operation</text>
-  <text class="note" x="1555" y="1070" text-anchor="end">Design milestone - TourPrj</text>
+  <text class="note" x="45" y="1360">Visibility: - private attribute | + public operation</text>
+  <text class="note" x="1555" y="1360" text-anchor="end">Design milestone - TourPrj</text>
 </svg>

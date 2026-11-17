@@ -9,7 +9,14 @@ class Destination {
   - baseCost: double
   + Destination()
   + Destination(id: String, name: String, region: String, baseCost: double)
-  + getters/setters
+  + getDestinationId(): String
+  + setDestinationId(id: String): void
+  + getDestinationName(): String
+  + setDestinationName(name: String): void
+  + getRegion(): String
+  + setRegion(region: String): void
+  + getBaseCost(): double
+  + setBaseCost(baseCost: double): void
   + toString(): String
 }
 
@@ -21,7 +28,16 @@ class Tour {
   - price: double
   + Tour()
   + Tour(id: String, destination: Destination, name: String, date: String, price: double)
-  + getters/setters
+  + getTourId(): String
+  + setTourId(id: String): void
+  + getDestination(): Destination
+  + setDestination(destination: Destination): void
+  + getTourName(): String
+  + setTourName(name: String): void
+  + getDepartureDate(): String
+  + setDepartureDate(date: String): void
+  + getPrice(): double
+  + setPrice(price: double): void
   + compareTo(other: Tour): int
   + toString(): String
   + screenString(): String
