@@ -12,6 +12,8 @@ This repository contains the reviewed design package and a compilable six-class 
 - `TourPrj/data/` - initial text data matching the agreed formats.
 - `docs/design/` - requirements traceability, UML source, file-flow, menu specification, test plan, and module contracts.
 
+The rendered UML is available at [`docs/design/uml-class-diagram.png`](docs/design/uml-class-diagram.png); the editable source is [`docs/design/uml-class-diagram.svg`](docs/design/uml-class-diagram.svg).
+
 ## Compile the design skeleton
 
 From `TourPrj`:

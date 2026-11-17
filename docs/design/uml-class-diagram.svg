@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img" aria-labelledby="title desc">
+  <title id="title">UML Class Diagram for TourPrj</title>
+  <desc id="desc">Six Java classes for a travel tour management system and their relationships.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#334155"/>
+    </marker>
+    <marker id="diamond" markerWidth="16" markerHeight="16" refX="2" refY="8" orient="auto">
+      <path d="M2,8 L9,1 L16,8 L9,15 z" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+    </marker>
+    <style>
+      .canvas { fill: #f8fafc; }
+      .classbox { fill: #ffffff; stroke: #334155; stroke-width: 2; }
+      .header { fill: #dbeafe; stroke: #334155; stroke-width: 2; }
+      .title { font: 600 22px Arial, sans-serif; fill: #0f172a; }
+      .stereo { font: 14px Arial, sans-serif; fill: #475569; }
+      .body { font: 15px Consolas, 'Courier New', monospace; fill: #0f172a; }
+      .section { stroke: #334155; stroke-width: 1.5; }
+      .relation { stroke: #334155; stroke-width: 2; fill: none; }
+      .relation-label { font: 14px Arial, sans-serif; fill: #334155; }
+      .note { font: 14px Arial, sans-serif; fill: #475569; }
+    </style>
+  </defs>
+
+  <rect class="canvas" x="0" y="0" width="1600" height="1120"/>
+  <text x="800" y="38" text-anchor="middle" class="title" style="font-size:28px">TourPrj - UML Class Diagram</text>
+  <text x="800" y="64" text-anchor="middle" class="note">Travel Tour Management System | Java Console | Topic 10</text>
+
+  <!-- Destination -->
+  <g transform="translate(45 95)">
+    <rect class="classbox" width="470" height="300" rx="4"/>
+    <rect class="header" width="470" height="62" rx="4"/>
+    <text x="235" y="29" text-anchor="middle" class="stereo">&lt;&lt;entity&gt;&gt;</text>
+    <text x="235" y="51" text-anchor="middle" class="title">Destination</text>
+    <line class="section" x1="0" y1="62" x2="470" y2="62"/>
+    <text class="body" x="16" y="88">- destinationId: String</text>
+    <text class="body" x="16" y="111">- destinationName: String</text>
+    <text class="body" x="16" y="134">- region: String</text>
+    <text class="body" x="16" y="157">- baseCost: double</text>
+    <line class="section" x1="0" y1="174" x2="470" y2="174"/>
+    <text class="body" x="16" y="201">+ Destination()</text>
+    <text class="body" x="16" y="224">+ Destination(id, name, region, cost)</text>
+    <text class="body" x="16" y="247">+ getters / setters</text>
+    <text class="body" x="16" y="270">+ toString(): String</text>
+  </g>
+
+  <!-- Tour -->
+  <g transform="translate(1085 95)">
+    <rect class="classbox" width="470" height="345" rx="4"/>
+    <rect class="header" width="470" height="62" rx="4"/>
+    <text x="235" y="29" text-anchor="middle" class="stereo">&lt;&lt;entity&gt;&gt; implements Comparable&lt;Tour&gt;</text>
+    <text x="235" y="51" text-anchor="middle" class="title">Tour</text>
+    <line class="section" x1="0" y1="62" x2="470" y2="62"/>
+    <text class="body" x="16" y="88">- tourId: String</text>
+    <text class="body" x="16" y="111">- destination: Destination</text>
+    <text class="body" x="16" y="134">- tourName: String</text>
+    <text class="body" x="16" y="157">- departureDate: String</text>
+    <text class="body" x="16" y="180">- price: double</text>
+    <line class="section" x1="0" y1="197" x2="470" y2="197"/>
+    <text class="body" x="16" y="224">+ Tour()</text>
+    <text class="body" x="16" y="247">+ Tour(id, destination, name, date, price)</text>
+    <text class="body" x="16" y="270">+ getters / setters</text>
+    <text class="body" x="16" y="293">+ compareTo(other): int</text>
+    <text class="body" x="16" y="316">+ toString(), screenString(): String</text>
+  </g>
+
+  <!-- DestinationList -->
+  <g transform="translate(45 505)">
+    <rect class="classbox" width="535" height="375" rx="4"/>
+    <rect class="header" width="535" height="62" rx="4"/>
+    <text x="267" y="28" text-anchor="middle" class="stereo">&lt;&lt;collection&gt;&gt; extends ArrayList&lt;Destination&gt;</text>
+    <text x="267" y="51" text-anchor="middle" class="title">DestinationList</text>
+    <line class="section" x1="0" y1="62" x2="535" y2="62"/>
+    <text class="body" x="16" y="91">+ loadFromFile(filename): boolean</text>
+    <text class="body" x="16" y="116">+ saveToFile(filename): boolean</text>
+    <text class="body" x="16" y="141">+ searchId(id): int</text>
+    <text class="body" x="16" y="166">+ addDestination(): void</text>
+    <text class="body" x="16" y="191">+ updateDestination(): boolean</text>
+    <text class="body" x="16" y="216">+ listDestinations(): void</text>
+    <text class="body" x="16" y="241">+ getUserChoice(): Destination</text>
+    <line class="section" x1="0" y1="258" x2="535" y2="258"/>
+    <text class="note" x="16" y="286">Owns Destination CRUD, validation and file I/O.</text>
+    <text class="note" x="16" y="309">searchId returns the index or -1.</text>
+  </g>
+
+  <!-- Menu -->
+  <g transform="translate(625 545)">
+    <rect class="classbox" width="350" height="190" rx="4"/>
+    <rect class="header" width="350" height="62" rx="4"/>
+    <text x="175" y="28" text-anchor="middle" class="stereo">&lt;&lt;utility&gt;&gt;</text>
+    <text x="175" y="51" text-anchor="middle" class="title">Menu</text>
+    <line class="section" x1="0" y1="62" x2="350" y2="62"/>
+    <text class="body" x="16" y="94">+ intGetChoice(options): int</text>
+    <text class="body" x="16" y="121">+ refGetChoice(options): E</text>
+    <line class="section" x1="0" y1="137" x2="350" y2="137"/>
+    <text class="note" x="16" y="164">Generic selection and input recovery.</text>
+  </g>
+
+  <!-- TourList -->
+  <g transform="translate(1015 535)">
+    <rect class="classbox" width="540" height="405" rx="4"/>
+    <rect class="header" width="540" height="62" rx="4"/>
+    <text x="270" y="28" text-anchor="middle" class="stereo">&lt;&lt;collection&gt;&gt; extends ArrayList&lt;Tour&gt;</text>
+    <text x="270" y="51" text-anchor="middle" class="title">TourList</text>
+    <line class="section" x1="0" y1="62" x2="540" y2="62"/>
+    <text class="body" x="16" y="91">+ loadFromFile(file, destinations): boolean</text>
+    <text class="body" x="16" y="116">+ saveToFile(filename): boolean</text>
+    <text class="body" x="16" y="141">+ searchId(id): int</text>
+    <text class="body" x="16" y="166">+ addTour(destinations): void</text>
+    <text class="body" x="16" y="191">+ removeTour(): boolean</text>
+    <text class="body" x="16" y="216">+ updateTour(destinations): boolean</text>
+    <text class="body" x="16" y="241">+ listTours(): void</text>
+    <text class="body" x="16" y="266">+ printBasedDestinationName(): void</text>
+    <line class="section" x1="0" y1="283" x2="540" y2="283"/>
+    <text class="note" x="16" y="311">Loads after DestinationList resolves IDs.</text>
+    <text class="note" x="16" y="334">Sorts with Collections.sort(compareTo).</text>
+  </g>
+
+  <!-- TourManager -->
+  <g transform="translate(625 815)">
+    <rect class="classbox" width="350" height="215" rx="4"/>
+    <rect class="header" width="350" height="62" rx="4"/>
+    <text x="175" y="28" text-anchor="middle" class="stereo">&lt;&lt;application&gt;&gt;</text>
+    <text x="175" y="51" text-anchor="middle" class="title">TourManager</text>
+    <line class="section" x1="0" y1="62" x2="350" y2="62"/>
+    <text class="body" x="16" y="96">+ main(args): void</text>
+    <line class="section" x1="0" y1="113" x2="350" y2="113"/>
+    <text class="note" x="16" y="143">Creates lists and loads destinations</text>
+    <text class="note" x="16" y="166">before tours, then routes menu 0-11.</text>
+  </g>
+
+  <!-- Relationships -->
+  <path class="relation" d="M1085 188 L520 188" marker-end="url(#arrow)"/>
+  <text class="relation-label" x="790" y="178" text-anchor="middle">destination (1)</text>
+  <text class="relation-label" x="790" y="207" text-anchor="middle">Tour belongs to one Destination</text>
+
+  <path class="relation" d="M800 815 L800 735" marker-end="url(#arrow)"/>
+  <text class="relation-label" x="815" y="777">uses Menu</text>
+
+  <path class="relation" d="M975 860 L1015 860" marker-end="url(#arrow)"/>
+  <text class="relation-label" x="990" y="845" text-anchor="middle">uses</text>
+
+  <path class="relation" d="M625 885 L580 885 L580 700" marker-end="url(#arrow)"/>
+  <text class="relation-label" x="590" y="795" text-anchor="end">uses</text>
+
+  <text class="note" x="45" y="1070">Visibility: - private attribute | + public operation</text>
+  <text class="note" x="1555" y="1070" text-anchor="end">Design milestone - TourPrj</text>
+</svg>
