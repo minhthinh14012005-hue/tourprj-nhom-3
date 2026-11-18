@@ -67,6 +67,7 @@ class TourList {
 class Menu {
   + {static} <E> intGetChoice(options: ArrayList<E>): int
   + {static} <E> refGetChoice(options: ArrayList<E>): E
+  + {static} readLine(prompt: String): String
 }
 
 class TourManager {

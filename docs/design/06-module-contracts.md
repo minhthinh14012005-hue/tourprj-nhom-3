@@ -1,4 +1,4 @@
-# Module contracts and review handoff
+~~# Module contracts and review handoff
 
 ## Ownership at the design gate
 
@@ -24,3 +24,10 @@
 3. Data files have at least three valid records each and use the documented schema.
 4. Test plan contains all twelve required scenarios.
 5. No implementation branch begins changing public method contracts without updating UML and this document.
+## Bổ sung hỗ trợ II.6 — 18/11/2026
+
+- Người bổ sung: Lê Thuần Trường.
+- Menu.readLine(String prompt): hiển thị lời nhắc, đọc một dòng
+  và loại bỏ khoảng trắng hai đầu.
+- Các phương thức nhập console dùng chung Scanner của Menu.
+- Cần phối hợp với Nguyễn Hữu Đức khi tích hợp phần chọn menu.~~
