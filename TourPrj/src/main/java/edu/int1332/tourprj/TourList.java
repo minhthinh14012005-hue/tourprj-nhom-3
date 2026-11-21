@@ -8,7 +8,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.Locale;
+import java.util.Scanner;
 import java.util.Set;
 
 /**
@@ -168,7 +171,7 @@ public class TourList extends ArrayList<Tour> {
         return matches;
     }
 
-    // Cac ham duoi day thuoc pham vi thanh vien khac; GIU NGUYEN skeleton.
+    // Cac ham duoi day thuoc pham vi thanh vien khac (Bui Van Sang phu trach CRUD); GIU NGUYEN skeleton.
     public void addTour(DestinationList destinations) {
     }
 
@@ -180,9 +183,83 @@ public class TourList extends ArrayList<Tour> {
         return false;
     }
 
+    /**
+     * Option 6: List all Tours sorted by destinationName (va tie-break bang tourId).
+     * Phu trach boi: Dam Trong Dat (Viec III.1).
+     * Su dung Collections.sort theo Comparable<Tour>.
+     */
     public void listTours() {
+        if (isEmpty()) {
+            System.out.println("Tour list is currently empty.");
+            return;
+        }
+        Collections.sort(this);
+        System.out.println("---------------------------------------------------------------------------------------");
+        System.out.printf("%-6s %-20s %-24s %-12s %-15s%n", "ID", "Destination", "Tour Name", "Departure", "Price (VND)");
+        System.out.println("---------------------------------------------------------------------------------------");
+        for (Tour tour : this) {
+            if (tour != null) {
+                System.out.println(tour.screenString());
+            }
+        }
+        System.out.println("---------------------------------------------------------------------------------------");
+        System.out.printf("Total: %d tour(s)%n", size());
     }
 
+    /**
+     * Loc danh sach Tour co destinationName chua keyword (khong phan biet hoa thuong).
+     * Phuong thuc bo tro phuc vu tim kiem va kiem thu tu dong.
+     */
+    public ArrayList<Tour> findToursByDestinationName(String keyword) {
+        ArrayList<Tour> results = new ArrayList<>();
+        if (keyword == null || keyword.trim().isEmpty()) {
+            return results;
+        }
+        String searchLower = keyword.trim().toLowerCase(Locale.ROOT);
+        for (Tour tour : this) {
+            if (tour != null && tour.getDestination() != null
+                    && tour.getDestination().getDestinationName() != null) {
+                String destNameLower = tour.getDestination().getDestinationName().toLowerCase(Locale.ROOT);
+                if (destNameLower.contains(searchLower)) {
+                    results.add(tour);
+                }
+            }
+        }
+        return results;
+    }
+
+    /**
+     * Hien thi ket qua tim kiem Tour theo destinationName voi tu khoa xac dinh.
+     */
+    public void printBasedDestinationName(String keyword) {
+        if (keyword == null || keyword.trim().isEmpty()) {
+            System.out.println("Search keyword cannot be blank.");
+            return;
+        }
+        ArrayList<Tour> matches = findToursByDestinationName(keyword);
+        if (matches.isEmpty()) {
+            System.out.printf("No tours found with destination matching '%s'.%n", keyword.trim());
+            return;
+        }
+        System.out.printf("Found %d tour(s) matching destination '%s':%n", matches.size(), keyword.trim());
+        System.out.println("---------------------------------------------------------------------------------------");
+        System.out.printf("%-6s %-20s %-24s %-12s %-15s%n", "ID", "Destination", "Tour Name", "Departure", "Price (VND)");
+        System.out.println("---------------------------------------------------------------------------------------");
+        for (Tour tour : matches) {
+            System.out.println(tour.screenString());
+        }
+        System.out.println("---------------------------------------------------------------------------------------");
+    }
+
+    /**
+     * Option 7: Search Tours by partial destinationName.
+     * Phu trach boi: Dam Trong Dat (Viec III.1).
+     * Nhap tu khoa tu console, loc khong phan biet hoa/thuong va thong bao khi khong co ket qua.
+     */
     public void printBasedDestinationName() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter partial destination name to search: ");
+        String keyword = scanner.nextLine();
+        printBasedDestinationName(keyword);
     }
 }

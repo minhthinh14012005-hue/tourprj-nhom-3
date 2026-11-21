@@ -1,0 +1,6 @@
+D01,Da Nang,Central,1500000
+D02,Ha Long,North,2000000
+D03,Da Lat,South,1800000
+D04,Hue,Central,1200000
+D05,Phu Quoc,South,2500000
+D06,Sa Pa,North,1700000
