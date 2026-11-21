@@ -19,7 +19,7 @@ The rendered UML is available at [`docs/design/uml-class-diagram.png`](docs/desi
 From `TourPrj`:
 
 ```powershell
-javac -d out src/main/java/edu/int1332/tourprj/*.java
+javac -encoding UTF-8 -d out src/main/java/edu/int1332/tourprj/*.java
 java -cp out edu.int1332.tourprj.TourManager
 ```
 
