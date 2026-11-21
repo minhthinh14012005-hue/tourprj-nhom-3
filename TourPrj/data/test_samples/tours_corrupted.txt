@@ -1,0 +1,8 @@
+T01,D01,Beach Discovery,2027-01-15,2800000
+invalid_single_field_row
+T02,D99,Reference to missing destination,2027-02-12,3500000
+T01,D01,Duplicate tour ID T01,2027-02-20,2900000
+T04,D02,Negative price tour,2027-03-01,-150000
+T05,D02,NaN price tour,2027-03-05,free_of_charge
+T06,D03,,2027-03-10,3200000
+T07,D03,Valid Tour After Errors,2027-03-15,2500000
