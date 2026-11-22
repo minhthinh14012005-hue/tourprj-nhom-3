@@ -1,0 +1,44 @@
+Picked up JAVA_TOOL_OPTIONS: -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8
+Cannot add tour: destination list is empty. Please add a destination first.
+[PASS] T08.1 addTour rejects empty DestinationList
+Enter tour ID: Value cannot be empty. Please re-enter.
+Enter tour ID: Tour ID already exists. Please enter another ID.
+Enter tour ID: Tour ID already exists. Please enter another ID.
+Enter tour ID: Value cannot contain a comma (','). Please re-enter.
+Enter tour ID: Select a destination for this tour:
+Enter tour name: Value cannot be empty. Please re-enter.
+Enter tour name: Value cannot contain a comma (','). Please re-enter.
+Enter tour name: Enter departure date (yyyy-MM-dd): Enter price (>= 0): Price must be a valid finite number >= 0. Please re-enter.
+Enter price (>= 0): Price must be a valid finite number >= 0. Please re-enter.
+Enter price (>= 0): Added tour successfully: T04    Da Lat               Flower Valley            2027-04-01   0
+[PASS] T08.2 addTour rejects invalid inputs then adds valid Tour
+Enter tour ID: Select a destination for this tour:
+Invalid or missing destination selection. Tour was not added.
+[PASS] T08.3 addTour rejects destination not in DestinationList
+Enter tour ID: Select a destination for this tour:
+Invalid or missing destination selection. Tour was not added.
+[PASS] T08.4 addTour aborts safely when getUserChoice returns null
+Enter tour ID to remove: Tour ID 'T99' not found.
+[PASS] T09.1 removeTour returns false for missing ID
+Enter tour ID to remove: Removed tour successfully: T04 - Flower Valley
+[PASS] T09.2 removeTour removes existing ID (case-insensitive)
+Tour list is empty.
+[PASS] T09.3 removeTour returns false on empty list
+Enter tour ID to update: Tour ID 'NO_SUCH_ID' not found.
+[PASS] T10.1 updateTour returns false for missing ID
+Enter tour ID to update: Current tour: T01    Da Nang              Beach Discovery          2027-01-15   2.800.000
+Enter new tour ID: Tour ID 'T02' already belongs to another tour. Please re-enter.
+Enter new tour ID: Select new destination for this tour:
+Enter new tour name: Enter new departure date (yyyy-MM-dd): Enter new price (>= 0): Price must be a valid finite number >= 0. Please re-enter.
+Enter new price (>= 0): Price must be a valid finite number >= 0. Please re-enter.
+Enter new price (>= 0): Updated tour successfully: T01    Da Lat               Da Lat Premium           2027-05-15   4.200.000
+[PASS] T10.2 updateTour blocks duplicate ID, allows keeping own ID, updates fields
+Enter tour ID to update: Current tour: T01    Da Lat               Da Lat Premium           2027-05-15   4.200.000
+Enter new tour ID: Select new destination for this tour:
+Enter new tour name: Enter new departure date (yyyy-MM-dd): Enter new price (>= 0): Updated tour successfully: T10    Da Nang              Da Nang Classic          2027-06-01   2.900.000
+[PASS] T10.3 updateTour supports renaming to an unused ID
+Enter tour ID to update: Current tour: T10    Da Nang              Da Nang Classic          2027-06-01   2.900.000
+Enter new tour ID: Select new destination for this tour:
+Invalid or missing destination selection. Tour was not updated.
+[PASS] T10.4 updateTour preserves old data if destination choice is invalid
+RESULT: 11 passed, 0 failed
