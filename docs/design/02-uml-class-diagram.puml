@@ -26,6 +26,12 @@ class Tour {
   - tourName: String
   - departureDate: String
   - price: double
+
+  ' Người bổ sung: Lê Thuần Trường
+  ' Ngày bổ sung: 22/11/2026
+  ' Mô tả: III.6 - Bộ định dạng kiểm tra ngày khởi hành.
+  - {static} DEPARTURE_DATE_FORMATTER: DateTimeFormatter
+
   + Tour()
   + Tour(id: String, destination: Destination, name: String, date: String, price: double)
   + getTourId(): String
@@ -41,6 +47,11 @@ class Tour {
   + compareTo(other: Tour): int
   + toString(): String
   + screenString(): String
+
+  ' Người bổ sung: Lê Thuần Trường
+  ' Ngày bổ sung: 22/11/2026
+  ' Mô tả: III.6 - Kiểm tra định dạng và tính hợp lệ của ngày.
+  + {static} isValidDepartureDate(value: String): boolean
 }
 
 class DestinationList {

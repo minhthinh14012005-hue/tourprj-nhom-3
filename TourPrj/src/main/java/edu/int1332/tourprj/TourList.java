@@ -66,6 +66,23 @@ public class TourList extends ArrayList<Tour> {
                     allValid = false;
                     continue;
                 }
+
+                /*
+                 * Người bổ sung: Lê Thuần Trường
+                 * Ngày bổ sung: 22/11/2026
+                 * Mô tả: III.6 - Kiểm tra ngày khởi hành khi đọc file Tour.
+                 *        Báo rõ file, dòng lỗi và bỏ qua bản ghi không hợp lệ.
+                 */
+                if (!Tour.isValidDepartureDate(departureDate)) {
+                    System.err.printf(
+                            "%s:%d: invalid departure date '%s'; "
+                                    + "expected a valid date in yyyy-MM-dd format; skipped.%n",
+                            filename, lineNumber, departureDate
+                    );
+                    allValid = false;
+                    continue;
+                }
+
                 String idKey = id.toLowerCase(java.util.Locale.ROOT);
                 if (seenIds.contains(idKey)) {
                     System.err.printf("%s:%d: duplicate tour ID '%s'; skipped.%n", filename, lineNumber, id);

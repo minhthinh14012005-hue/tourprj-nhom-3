@@ -24,3 +24,12 @@
 3. Data files have at least three valid records each and use the documented schema.
 4. Test plan contains all twelve required scenarios.
 5. No implementation branch begins changing public method contracts without updating UML and this document.
+
+## Bổ sung kiểm tra ngày III.6 — 22/11/2026
+
+- Người thực hiện: Lê Thuần Trường.
+- `Tour.isValidDepartureDate(String value)` trả `true` khi chuỗi đúng dạng `yyyy-MM-dd` và biểu diễn ngày hợp lệ.
+- Khi đọc file Tour, dòng có ngày không hợp lệ được thông báo rõ tên file, số dòng và bỏ qua; các dòng hợp lệ vẫn được nạp.
+- `DateValidationTestDriver`: 15 passed, 0 failed trên IntelliJ.
+- `TourListTestDriver`: 14 passed, 0 failed trên IntelliJ.
+- Còn tích hợp kiểm tra ngày và yêu cầu nhập lại trong `addTour`/`updateTour` của Bùi Văn Sang.
