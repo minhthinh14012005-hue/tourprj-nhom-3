@@ -1,4 +1,5 @@
 @startuml
+!pragma layout smetana
 hide empty members
 skinparam classAttributeIconSize 0
 
@@ -73,6 +74,7 @@ class TourList {
   + updateTour(destinations: DestinationList): boolean
   + listTours(): void
   + printBasedDestinationName(): void
+  - {static} readDepartureDate(prompt: String): String
 }
 
 class Menu {
@@ -84,10 +86,17 @@ class TourManager {
   + {static} main(args: String[]): void
 }
 
+' Người cập nhật: Lê Thuần Trường
+' Ngày cập nhật: 23/11/2026
+' Mô tả: Khai báo kiểu generic cho các quan hệ UML.
+class "ArrayList<Destination>" as DestinationArrayList
+class "ArrayList<Tour>" as TourArrayList
+interface "Comparable<Tour>" as TourComparable
+
 Tour --> Destination : one destination
-DestinationList --|> ArrayList~Destination~
-TourList --|> ArrayList~Tour~
-Tour ..|> Comparable~Tour~
+DestinationList --|> DestinationArrayList
+TourList --|> TourArrayList
+Tour ..|> TourComparable
 TourManager ..> Menu
 TourManager ..> DestinationList
 TourManager ..> TourList

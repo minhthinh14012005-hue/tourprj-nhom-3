@@ -32,4 +32,13 @@
 - Khi đọc file Tour, dòng có ngày không hợp lệ được thông báo rõ tên file, số dòng và bỏ qua; các dòng hợp lệ vẫn được nạp.
 - `DateValidationTestDriver`: 15 passed, 0 failed trên IntelliJ.
 - `TourListTestDriver`: 14 passed, 0 failed trên IntelliJ.
-- Còn tích hợp kiểm tra ngày và yêu cầu nhập lại trong `addTour`/`updateTour` của Bùi Văn Sang.
+- Đã tích hợp kiểm tra ngày và yêu cầu nhập lại trong `addTour`/`updateTour` của Bùi Văn Sang (23/11/2026).
+
+## Tích hợp nhập ngày III.6 — 23/11/2026
+
+- Người thực hiện: Lê Thuần Trường; giữ mã CRUD Tour của Bùi Văn Sang.
+- `TourList.readDepartureDate` yêu cầu nhập lại khi ngày sai định dạng hoặc không tồn tại.
+- Hết dữ liệu nhập khi thêm/sửa: hủy thao tác, giữ nguyên dữ liệu hiện tại.
+- Kiểm thử trên IntelliJ: DateValidationTestDriver 15/15; DateInputTestDriver 4/4; TourCrudTestDriver 11/11; TourListTestDriver 14/14; 0 failed.
+- Hai bộ test nhập liệu mô phỏng lựa chọn Destination; còn kiểm thử tích hợp với Menu và DestinationList thực tế.
+- Đã đồng bộ UML và ảnh PNG/SVG.
