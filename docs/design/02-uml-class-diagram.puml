@@ -55,6 +55,7 @@ class DestinationList {
 }
 
 class TourList {
+  + findToursByPriceRange(minPrice: double, maxPrice: double): ArrayList<Tour>
   + loadFromFile(filename: String, destinations: DestinationList): boolean
   + saveToFile(filename: String): boolean
   + searchId(id: String): int
@@ -66,8 +67,12 @@ class TourList {
 }
 
 class Menu {
+  ' Người đồng bộ: Lê Thuần Trường - 24/11/2026
   + {static} <E> intGetChoice(options: ArrayList<E>): int
   + {static} <E> refGetChoice(options: ArrayList<E>): E
+  + {static} readIntInRange(prompt: String, min: int, max: int): int
+  + {static} readNonNegativeDouble(prompt: String): double
+  + {static} readRequiredText(prompt: String): String
   + {static} readLine(prompt: String): String
 }
 
@@ -90,4 +95,5 @@ TourManager ..> Menu
 TourManager ..> DestinationList
 TourManager ..> TourList
 TourList ..> DestinationList : resolves destination IDs
+DestinationList ..> Menu : selection and input
 @enduml

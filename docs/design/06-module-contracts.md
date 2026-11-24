@@ -31,4 +31,21 @@
 - Menu.readLine(String prompt): hiển thị lời nhắc, đọc một dòng
   và loại bỏ khoảng trắng hai đầu.
 - Các phương thức nhập console dùng chung Scanner của Menu.
-- Cần phối hợp với Nguyễn Hữu Đức khi tích hợp phần chọn menu.
+- Đã tích hợp Menu/TourManager của Nguyễn Hữu Đức từ PR #5 và kiểm thử lựa chọn Destination bằng Menu thực tế (24/11/2026).
+
+## Hoàn tất tích hợp II.6 — 24/11/2026
+
+- Người thực hiện: Lê Thuần Trường.
+- Reviewer theo Plan: Đàm Trọng Đạt (chờ review).
+- Đã tích hợp Menu/TourManager từ PR #5, giữ thông tin tác giả Nguyễn Hữu Đức.
+- Đã kiểm tra thêm, sửa, liệt kê và chọn Destination bằng Menu thực tế.
+- Từ chối mã trùng, chuỗi rỗng, dấu phẩy và chi phí không hợp lệ.
+- Cho phép giữ mã hoặc đổi sang mã chưa dùng; giữ nguyên đối tượng Destination và liên kết với Tour.
+- Đã kiểm tra luồng menu 1, 2, 4 và lưu/nạp lại dữ liệu.
+- Biên dịch thành công bằng `javac --release 11`.
+- DestinationCrudTestDriver: 10 passed, 0 failed.
+- DestinationListTestDriver: 9 passed, 0 failed.
+- TourListTestDriver: 14 passed, 0 failed.
+- Tổng: 33 passed, 0 failed.
+- Log: `docs/test-results/II6_Destination_Test_Log.txt`.
+- Đã đồng bộ UML và ảnh PNG/SVG; chờ reviewer duyệt.
