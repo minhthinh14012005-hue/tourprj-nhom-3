@@ -40,5 +40,20 @@
 - `TourList.readDepartureDate` yêu cầu nhập lại khi ngày sai định dạng hoặc không tồn tại.
 - Hết dữ liệu nhập khi thêm/sửa: hủy thao tác, giữ nguyên dữ liệu hiện tại.
 - Kiểm thử trên IntelliJ: DateValidationTestDriver 15/15; DateInputTestDriver 4/4; TourCrudTestDriver 11/11; TourListTestDriver 14/14; 0 failed.
-- Hai bộ test nhập liệu mô phỏng lựa chọn Destination; còn kiểm thử tích hợp với Menu và DestinationList thực tế.
+- Đã bổ sung kiểm thử qua Menu và DestinationList thực tế, đạt 4/4 ngày 24/11/2026.
 - Đã đồng bộ UML và ảnh PNG/SVG.
+
+## Hoàn tất kiểm thử tích hợp III.6 — 24/11/2026
+
+- Người thực hiện: Lê Thuần Trường.
+- Tích hợp Menu/TourManager của Nguyễn Hữu Đức từ PR #5 và DestinationList từ PR #2; giữ thông tin tác giả.
+- TourList dùng chung bộ nhập của Menu để tránh nhiều Scanner cùng đọc System.in.
+- Biên dịch thành công bằng `javac --release 11`.
+- DateValidationTestDriver: 15 passed, 0 failed.
+- DateInputTestDriver: 4 passed, 0 failed.
+- TourCrudTestDriver: 11 passed, 0 failed.
+- TourListTestDriver: 14 passed, 0 failed.
+- DateMenuIntegrationTestDriver: 4 passed, 0 failed.
+- Tổng: 48 passed, 0 failed.
+- Đã kiểm tra thêm/sửa qua menu, nhập lại ngày sai, lưu/nạp lại và hủy an toàn khi hết dữ liệu.
+- Chờ reviewer kiểm tra; chưa xác nhận đã được duyệt.

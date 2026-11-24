@@ -3,14 +3,12 @@ package edu.int1332.tourprj;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Scanner;
 import java.util.Set;
 
 /**
@@ -187,8 +185,6 @@ public class TourList extends ArrayList<Tour> {
         return matches;
     }
 
-    private static InputStream boundInputStream;
-    private static Scanner inputScanner;
 
     public void addTour(DestinationList destinations) {
         if (destinations == null || destinations.isEmpty()) {
@@ -335,16 +331,18 @@ public class TourList extends ArrayList<Tour> {
         return true;
     }
 
+    /**
+     * Người tích hợp: Lê Thuần Trường.
+     * Ngày tích hợp: 23/11/2026.
+     * Mô tả: Dùng chung bộ nhập của Menu, tránh nhiều Scanner đọc System.in.
+     */
     private static String readLine(String prompt) {
-        if (inputScanner == null || boundInputStream != System.in) {
-            boundInputStream = System.in;
-            inputScanner = new Scanner(System.in);
-        }
-        System.out.print(prompt);
-        if (!inputScanner.hasNextLine()) {
+        try {
+            return Menu.readLine(prompt);
+        } catch (IllegalStateException ex) {
+            // Hết dữ liệu nhập: hủy thao tác thêm/sửa an toàn.
             return null;
         }
-        return inputScanner.nextLine().trim();
     }
 
     private static String readRequiredText(String prompt) {
