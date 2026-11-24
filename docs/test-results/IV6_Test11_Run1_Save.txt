@@ -1,0 +1,50 @@
+Loaded 3 destination(s) and 3 tour(s).
+
+========== TOUR MANAGEMENT ==========
+1. List destinations
+2. Add destination
+3. Search destination by ID
+4. Update destination
+5. Save destinations
+6. List tours sorted
+7. Search tours by destination name
+8. Add tour
+9. Remove tour
+10. Update tour
+11. Save tours
+0. Exit without implicit save
+Your choice (0-11): Enter tour ID: Select a destination for this tour:
+1. D01,Da Nang,Central,1500000.0
+2. D02,Ha Long,North,2000000.0
+3. D03,Hue,Central,1000000.0
+Choose 1-3: Enter tour name: Enter departure date (yyyy-MM-dd): Enter price (>= 0): Added tour successfully: T04    Ha Long              IV6 Save Restart         2028-02-29   4,500,000
+
+========== TOUR MANAGEMENT ==========
+1. List destinations
+2. Add destination
+3. Search destination by ID
+4. Update destination
+5. Save destinations
+6. List tours sorted
+7. Search tours by destination name
+8. Add tour
+9. Remove tour
+10. Update tour
+11. Save tours
+0. Exit without implicit save
+Your choice (0-11): Saved tours successfully.
+
+========== TOUR MANAGEMENT ==========
+1. List destinations
+2. Add destination
+3. Search destination by ID
+4. Update destination
+5. Save destinations
+6. List tours sorted
+7. Search tours by destination name
+8. Add tour
+9. Remove tour
+10. Update tour
+11. Save tours
+0. Exit without implicit save
+Your choice (0-11): Exit selected. No implicit save was performed.

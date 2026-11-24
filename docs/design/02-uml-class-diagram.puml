@@ -1,4 +1,5 @@
 @startuml
+!pragma layout smetana
 hide empty members
 skinparam classAttributeIconSize 0
 
@@ -26,6 +27,12 @@ class Tour {
   - tourName: String
   - departureDate: String
   - price: double
+
+  ' Người bổ sung: Lê Thuần Trường
+  ' Ngày bổ sung: 22/11/2026
+  ' Mô tả: III.6 - Bộ định dạng kiểm tra ngày khởi hành.
+  - {static} DEPARTURE_DATE_FORMATTER: DateTimeFormatter
+
   + Tour()
   + Tour(id: String, destination: Destination, name: String, date: String, price: double)
   + getTourId(): String
@@ -41,6 +48,11 @@ class Tour {
   + compareTo(other: Tour): int
   + toString(): String
   + screenString(): String
+
+  ' Người bổ sung: Lê Thuần Trường
+  ' Ngày bổ sung: 22/11/2026
+  ' Mô tả: III.6 - Kiểm tra định dạng và tính hợp lệ của ngày.
+  + {static} isValidDepartureDate(value: String): boolean
 }
 
 class DestinationList {
@@ -54,31 +66,48 @@ class DestinationList {
 }
 
 class TourList {
+  ' Người đồng bộ: Lê Thuần Trường — 24/11/2026
   + loadFromFile(filename: String, destinations: DestinationList): boolean
   + saveToFile(filename: String): boolean
   + searchId(id: String): int
+  + findToursByPriceRange(minPrice: double, maxPrice: double): ArrayList<Tour>
   + addTour(destinations: DestinationList): void
   + removeTour(): boolean
   + updateTour(destinations: DestinationList): boolean
   + listTours(): void
   + printBasedDestinationName(): void
+  - {static} readDepartureDate(prompt: String): String
 }
 
 class Menu {
+  ' Người đồng bộ: Lê Thuần Trường — 24/11/2026
   + {static} <E> intGetChoice(options: ArrayList<E>): int
   + {static} <E> refGetChoice(options: ArrayList<E>): E
+  + {static} readIntInRange(prompt: String, min: int, max: int): int
+  + {static} readNonNegativeDouble(prompt: String): double
+  + {static} readRequiredText(prompt: String): String
+  + {static} readLine(prompt: String): String
 }
 
 class TourManager {
   + {static} main(args: String[]): void
 }
 
+' Người cập nhật: Lê Thuần Trường
+' Ngày cập nhật: 23/11/2026
+' Mô tả: Khai báo kiểu generic cho các quan hệ UML.
+class "ArrayList<Destination>" as DestinationArrayList
+class "ArrayList<Tour>" as TourArrayList
+interface "Comparable<Tour>" as TourComparable
+
 Tour --> Destination : one destination
-DestinationList --|> ArrayList~Destination~
-TourList --|> ArrayList~Tour~
-Tour ..|> Comparable~Tour~
+DestinationList --|> DestinationArrayList
+TourList --|> TourArrayList
+Tour ..|> TourComparable
 TourManager ..> Menu
 TourManager ..> DestinationList
 TourManager ..> TourList
 TourList ..> DestinationList : resolves destination IDs
+TourList ..> Menu : shared console input
+DestinationList ..> Menu : selection and input
 @enduml
