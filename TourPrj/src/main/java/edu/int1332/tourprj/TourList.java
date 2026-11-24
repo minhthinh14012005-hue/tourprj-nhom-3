@@ -8,7 +8,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Set;
 
 /**
@@ -410,10 +412,63 @@ public class TourList extends ArrayList<Tour> {
         return null;
     }
 
-    // Cac ham duoi day thuoc pham vi thanh vien khac; GIU NGUYEN skeleton.
     public void listTours() {
+        if (isEmpty()) {
+            System.out.println("Tour list is currently empty.");
+            return;
+        }
+        Collections.sort(this);
+        System.out.println("---------------------------------------------------------------------------------------");
+        System.out.printf("%-6s %-20s %-24s %-12s %-15s%n", "ID", "Destination", "Tour Name", "Departure", "Price (VND)");
+        System.out.println("---------------------------------------------------------------------------------------");
+        for (Tour tour : this) {
+            if (tour != null) {
+                System.out.println(tour.screenString());
+            }
+        }
+        System.out.println("---------------------------------------------------------------------------------------");
+        System.out.printf("Total: %d tour(s)%n", size());
+    }
+
+    public ArrayList<Tour> findToursByDestinationName(String keyword) {
+        ArrayList<Tour> results = new ArrayList<>();
+        if (keyword == null || keyword.trim().isEmpty()) {
+            return results;
+        }
+        String searchLower = keyword.trim().toLowerCase(Locale.ROOT);
+        for (Tour tour : this) {
+            if (tour != null && tour.getDestination() != null
+                    && tour.getDestination().getDestinationName() != null
+                    && tour.getDestination().getDestinationName()
+                    .toLowerCase(Locale.ROOT).contains(searchLower)) {
+                results.add(tour);
+            }
+        }
+        return results;
+    }
+
+    public void printBasedDestinationName(String keyword) {
+        if (keyword == null || keyword.trim().isEmpty()) {
+            System.out.println("Search keyword cannot be blank.");
+            return;
+        }
+        ArrayList<Tour> matches = findToursByDestinationName(keyword);
+        if (matches.isEmpty()) {
+            System.out.printf("No tours found with destination matching '%s'.%n", keyword.trim());
+            return;
+        }
+        System.out.printf("Found %d tour(s) matching destination '%s':%n", matches.size(), keyword.trim());
+        for (Tour tour : matches) {
+            System.out.println(tour.screenString());
+        }
     }
 
     public void printBasedDestinationName() {
+        String keyword = readLine("Enter partial destination name to search: ");
+        if (keyword == null) {
+            System.out.println("Input cancelled.");
+            return;
+        }
+        printBasedDestinationName(keyword);
     }
 }

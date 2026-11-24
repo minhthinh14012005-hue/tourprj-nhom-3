@@ -1,0 +1,7 @@
+D01,Da Nang,Central,1500000
+corrupted_line_without_commas
+D02,Ha Long,North,-500000
+D03,Da Lat,South,not_a_number
+,Missing ID,North,1000000
+D04,Hue,,1200000
+D05,Phu Quoc,South,2500000

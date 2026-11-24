@@ -1,4 +1,6 @@
 *.class
+bin/
+TourPrj/bin/
 out/
 build/
 target/

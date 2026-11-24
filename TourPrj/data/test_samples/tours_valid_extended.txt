@@ -1,0 +1,7 @@
+T01,D01,Beach Discovery,2027-01-15,2800000
+T02,D02,Bay Cruise,2027-02-12,3500000
+T03,D03,Highland Escape,2027-03-20,3200000
+T04,D01,Danang Night Tour,2027-01-18,1600000
+T05,D04,Imperial City Heritage,2027-04-05,2100000
+T06,D05,Sunset Island Discovery,2027-05-10,4200000
+T07,D06,Roof of Indochina Trek,2027-06-15,3100000
