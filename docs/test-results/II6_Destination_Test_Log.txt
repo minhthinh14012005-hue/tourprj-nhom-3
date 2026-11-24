@@ -1,0 +1,123 @@
+Người thực hiện: Lê Thuần Trường
+Ngày thực hiện: 24/11/2026
+Phạm vi: II.6
+Reviewer theo Plan: Đàm Trọng Đạt - chờ review
+Menu/TourManager: Nguyễn Hữu Đức, PR #5.
+Kiểm thử lựa chọn Destination bằng Menu thực tế.
+Runtime Java: 25.0.3
+
+[PASS] List empty DestinationList safely
+[PASS] Empty DestinationList selection returns null
+[PASS] Add rejects invalid inputs then adds a valid Destination
+[PASS] List shows all 4 records without modifying the list
+[PASS] Update missing ID returns false and keeps existing data
+[PASS] Update allows keeping own ID and retains the same object
+[PASS] Update rejects duplicate ID and preserves Tour reference
+[PASS] Real Menu retries invalid choices and returns selected object
+[PASS] Shared input stays usable and selection keeps list unchanged
+[PASS] Real menus add/update/save correctly and preserve Tour linkage
+RESULT: 10 passed, 0 failed
+Test data: C:\Users\ADMIN\AppData\Local\Temp\truong-ii6-menu-7073548034385138682
+
+TourManager integration transcript:
+Loaded 3 destination(s) and 3 tour(s).
+
+========== TOUR MANAGEMENT ==========
+1. List destinations
+2. Add destination
+3. Search destination by ID
+4. Update destination
+5. Save destinations
+6. List tours sorted
+7. Search tours by destination name
+8. Add tour
+9. Remove tour
+10. Update tour
+11. Save tours
+0. Exit without implicit save
+Your choice (0-11): ID           Destination               Region                Base cost
+D01          Da Nang                   Central              1500000.00
+D02          Ha Long                   North                2000000.00
+D03          Hue                       Central              1000000.00
+
+========== TOUR MANAGEMENT ==========
+1. List destinations
+2. Add destination
+3. Search destination by ID
+4. Update destination
+5. Save destinations
+6. List tours sorted
+7. Search tours by destination name
+8. Add tour
+9. Remove tour
+10. Update tour
+11. Save tours
+0. Exit without implicit save
+Your choice (0-11): Nhap Destination ID: ID da ton tai. Vui long nhap lai.
+Nhap Destination ID: Nhap ten Destination: Nhap region: Nhap base cost: Them Destination thanh cong.
+
+========== TOUR MANAGEMENT ==========
+1. List destinations
+2. Add destination
+3. Search destination by ID
+4. Update destination
+5. Save destinations
+6. List tours sorted
+7. Search tours by destination name
+8. Add tour
+9. Remove tour
+10. Update tour
+11. Save tours
+0. Exit without implicit save
+Your choice (0-11): Nhap ID Destination can sua: Thong tin hien tai:
+ID: D01
+Ten: Da Nang
+Region: Central
+Base cost: 1500000.0
+Nhap ID moi: ID da thuoc Destination khac.
+Nhap ID moi: Nhap ten moi: Nhap region moi: Nhap base cost: Cap nhat Destination thanh cong.
+
+========== TOUR MANAGEMENT ==========
+1. List destinations
+2. Add destination
+3. Search destination by ID
+4. Update destination
+5. Save destinations
+6. List tours sorted
+7. Search tours by destination name
+8. Add tour
+9. Remove tour
+10. Update tour
+11. Save tours
+0. Exit without implicit save
+Your choice (0-11): Saved destinations successfully.
+
+========== TOUR MANAGEMENT ==========
+1. List destinations
+2. Add destination
+3. Search destination by ID
+4. Update destination
+5. Save destinations
+6. List tours sorted
+7. Search tours by destination name
+8. Add tour
+9. Remove tour
+10. Update tour
+11. Save tours
+0. Exit without implicit save
+Your choice (0-11): Saved tours successfully.
+
+========== TOUR MANAGEMENT ==========
+1. List destinations
+2. Add destination
+3. Search destination by ID
+4. Update destination
+5. Save destinations
+6. List tours sorted
+7. Search tours by destination name
+8. Add tour
+9. Remove tour
+10. Update tour
+11. Save tours
+0. Exit without implicit save
+Your choice (0-11): Exit selected. No implicit save was performed.
