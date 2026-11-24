@@ -14,10 +14,7 @@ import java.util.Locale;
 import java.util.Set;
 
 /**
- * Danh sach Tour. Phan do Vu Huu Thinh phu trach:
- * loadFromFile, saveToFile, searchId va loc theo khoang gia.
- * Cac phuong thuc CRUD/hien thi van la skeleton do cac thanh vien khac thuc
- * hien.
+ * Danh sach Tour: nap/luu file, tim kiem, loc, CRUD va hien thi.
  */
 public class TourList extends ArrayList<Tour> {
     /**

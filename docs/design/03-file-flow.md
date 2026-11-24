@@ -45,7 +45,7 @@ flowchart TD
 
 ## Biên giới module
 
-Các phương thức `addTour`, `removeTour`, `updateTour`, `listTours` và `printBasedDestinationName` do thành viên khác triển khai, không thuộc thay đổi I.5/II.5. Hàm mở rộng `findToursByPriceRange` chỉ xử lý lọc danh sách, không tự ý sửa menu 0–11. Chữ ký thực tế được giữ theo code skeleton hiện tại (camelCase `searchId`, tham số `DestinationList` khi load); cần ghi nhận khác biệt với UML mô tả `searchID`.
+Các phương thức `addTour`, `removeTour`, `updateTour`, `listTours` và `printBasedDestinationName` đã được tích hợp ở phạm vi module Tour. Hàm mở rộng `findToursByPriceRange` chỉ xử lý lọc danh sách, không sửa dữ liệu gốc. Chữ ký mã nguồn dùng camelCase `searchId` và nhận `DestinationList` khi nạp file.
 
 ## Trường hợp biên
 
